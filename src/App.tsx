@@ -1,5 +1,5 @@
 import "./App.css";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function App() {
   const course = new URLSearchParams(useLocation().search).get("name");
