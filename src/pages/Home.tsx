@@ -1,3 +1,13 @@
+import { useLocation } from "react-router-dom";
+
 export const Home = () => {
-  return <h2>Home</h2>;
+  const course = new URLSearchParams(useLocation().search).get("name");
+  const startDate = new URLSearchParams(useLocation().search).get("date");
+
+  return (
+    <>
+      <h2>{course}</h2>
+      <h2>{startDate}</h2>
+    </>
+  );
 };

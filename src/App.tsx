@@ -1,15 +1,14 @@
 import "./App.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 function App() {
+  const course = new URLSearchParams(useLocation().search).get("name");
+  const startDate = new URLSearchParams(useLocation().search).get("date");
+
   return (
     <>
-      <nav>
-        <Link to="/vite-react-router/">Home</Link>
-        {" | "}
-        <Link to="/vite-react-router/main">Main</Link>
-      </nav>
-      <Outlet />
+      <h2>{course}</h2>
+      <h2>{startDate}</h2>
     </>
   );
 }
