@@ -1,0 +1,16 @@
+.cta {
+    color: var(--white);
+    padding: 5px 10px;
+    max-width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.cta.info{
+    background-color: var(--blue);
+}
+
+.cta.primary{
+    background-color: var(--coral);
+}
