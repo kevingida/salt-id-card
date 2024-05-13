@@ -6,18 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    path: "/vite-react-router/",
+    path: "/card/course/",
     element: <App />,
-    // children: [
-    //   {
-    //     path: "/vite-react-router/",
-    //     element: <Home />,
-    //   },
-    //   {
-    //     path: "/vite-react-router/main",
-    //     element: <Main />,
-    //   },
-    // ],
   },
 ]);
 
