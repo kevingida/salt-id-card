@@ -7,11 +7,11 @@ function App() {
   const startDate = new URLSearchParams(useLocation().search).get("date");
 
   return (
-    <>
+    <div className="root">
       <h2>{course}</h2>
       <h2>{startDate}</h2>
       <Main />
-    </>
+    </div>
   );
 }
 
