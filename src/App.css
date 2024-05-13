@@ -10,5 +10,6 @@
 @media screen and (max-width: 1025px) {
   .root {
     width: 100%;
+    overflow: hidden;
   }
 }
