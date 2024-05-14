@@ -1,6 +1,7 @@
 import "./page-not-found.css";
 import { ChangeEvent, useState } from "react";
 import { CtaButton, Form } from "../../components";
+import { isDisabled } from "../../utils/utils";
 
 export const PageNotFound = () => {
   const [input, setInput] = useState({
@@ -8,7 +9,6 @@ export const PageNotFound = () => {
     course: "",
     location: "sthlm",
   });
-  const [dateValid, setDateValid] = useState(false);
 
   const inputForm = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     e.preventDefault();
@@ -23,15 +23,6 @@ export const PageNotFound = () => {
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const queryParams = `/vite-react-router/?date=${date}&name=${course}&location=${location}`;
 
-  const isDateValid = (e: ChangeEvent<HTMLInputElement>) => {
-    const year = +e.target.value.split("-")[0];
-    if (year < 2018) {
-      setDateValid(false);
-      return;
-    }
-    setDateValid(true);
-  };
-
   return (
     <div className="page-not-found__container">
       <div className="page-not-found">
@@ -39,13 +30,11 @@ export const PageNotFound = () => {
       </div>
       <Form
         onChange={inputForm}
-        checkIfDateValid={isDateValid}
-        dateValid={dateValid}
       />
       <a href={baseUrl + queryParams}>
         <CtaButton
           variant="primary"
-          disabled={!dateValid}
+          disabled={isDisabled(date, course, location)}
         >
           Redirect
         </CtaButton>
