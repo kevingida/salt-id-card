@@ -1,7 +1,7 @@
 import "./page-not-found.css";
 import { ChangeEvent, useState } from "react";
 import { CtaButton, Form } from "../../components";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const PageNotFound = () => {
   const [input, setInput] = useState({
@@ -21,9 +21,9 @@ export const PageNotFound = () => {
     });
   };
   const { date, course, location } = input;
-  // const baseUrl = "http://localhost:5173/vite-react-router/";
-  const baseUrl = "https://kevingida.github.io/vite-react-router/";
-  const queryParams = `?date=${date}&name=${course}&location=${location}`;
+  // const baseUrl = "http://localhost:5173/vite-react-router";
+  const baseUrl = "https://kevingida.github.io/vite-react-router";
+  const queryParams = `/?date=${date}&name=${course}&location=${location}`;
 
   const handleSubmit = () => {
     redirect(queryParams);
