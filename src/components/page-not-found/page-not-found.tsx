@@ -22,8 +22,8 @@ export const PageNotFound = () => {
   };
   const { date, course, location } = input;
   // const baseUrl = "http://localhost:5173/vite-react-router";
-  const baseUrl = "https://kevingida.github.io/vite-react-router";
-  const queryParams = `/?date=${date}&name=${course}&location=${location}`;
+  const baseUrl = "https://kevingida.github.io";
+  const queryParams = `/vite-react-router/?date=${date}&name=${course}&location=${location}`;
 
   const handleSubmit = () => {
     redirect(queryParams);
