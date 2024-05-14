@@ -15,7 +15,7 @@ export const Form = ({onChange, checkIfDateValid, dateValid}: Props) => {
       {!dateValid && <span className="form-date__error">Invalid date. Please verify that year is later than 2018</span>}
       <label htmlFor="course">Course:</label>
       <select name="course" onChange={onChange} >
-        <option defaultValue="">Select Course</option>
+        <option defaultValue="" disabled={true} selected>Select Course</option>
         {listOfCourses.map(({id, name, value}) => <option value={name} key={id}>{value}</option>)}
       </select>
       <label htmlFor="course">Location:</label>
