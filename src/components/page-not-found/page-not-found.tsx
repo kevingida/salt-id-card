@@ -21,7 +21,6 @@ export const PageNotFound = () => {
   const { date, course, location } = input;
 
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  // const queryParams = `/vite-react-router/?date=${date}&name=${course}&location=${location}`;
   const queryParams = `?date=${date}&name=${course}&location=${location}`;
 
   return (
