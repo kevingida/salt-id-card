@@ -21,7 +21,8 @@ export const PageNotFound = () => {
   const { date, course, location } = input;
 
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  const queryParams = `/vite-react-router/?date=${date}&name=${course}&location=${location}`;
+  // const queryParams = `/vite-react-router/?date=${date}&name=${course}&location=${location}`;
+  const queryParams = `?date=${date}&name=${course}&location=${location}`;
 
   return (
     <div className="page-not-found__container">
@@ -31,7 +32,7 @@ export const PageNotFound = () => {
       <Form
         onChange={inputForm}
       />
-      <a href={baseUrl + queryParams}>
+      <a href={queryParams}>
         <CtaButton
           variant="primary"
           disabled={isDisabled(date, course, location)}
