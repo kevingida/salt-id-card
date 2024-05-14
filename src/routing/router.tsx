@@ -4,7 +4,7 @@ import {PageNotFound} from "../components";
 
 export const router = createBrowserRouter([
   {
-    path: "/vite-react-router/",
+    path: "/",
     element: <App/>,
     errorElement: <PageNotFound />
   },
