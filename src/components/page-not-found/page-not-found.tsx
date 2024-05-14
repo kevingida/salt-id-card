@@ -1,7 +1,6 @@
 import "./page-not-found.css";
 import { ChangeEvent, useState } from "react";
 import { CtaButton, Form } from "../../components";
-import { useNavigate } from "react-router-dom";
 
 export const PageNotFound = () => {
   const [input, setInput] = useState({
@@ -10,7 +9,6 @@ export const PageNotFound = () => {
     location: "sthlm",
   });
   const [dateValid, setDateValid] = useState(false);
-  const redirect = useNavigate();
 
   const inputForm = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     e.preventDefault();
@@ -21,13 +19,9 @@ export const PageNotFound = () => {
     });
   };
   const { date, course, location } = input;
-  // const baseUrl = "http://localhost:5173/vite-react-router";
-  const baseUrl = "https://kevingida.github.io";
-  const queryParams = `/vite-react-router/?date=${date}&name=${course}&location=${location}`;
 
-  const handleSubmit = () => {
-    redirect(queryParams);
-  };
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+  const queryParams = `/vite-react-router/?date=${date}&name=${course}&location=${location}`;
 
   const isDateValid = (e: ChangeEvent<HTMLInputElement>) => {
     const year = +e.target.value.split("-")[0];
@@ -48,9 +42,14 @@ export const PageNotFound = () => {
         checkIfDateValid={isDateValid}
         dateValid={dateValid}
       />
-      <CtaButton variant="primary" onClick={handleSubmit} disabled={!dateValid}>
-        Redirect
-      </CtaButton>
+      <a href={baseUrl + queryParams}>
+        <CtaButton
+          variant="primary"
+          disabled={!dateValid}
+        >
+          Redirect
+        </CtaButton>
+      </a>
       <span>{baseUrl + queryParams}</span>
     </div>
   );
