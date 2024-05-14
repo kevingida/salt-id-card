@@ -1,6 +1,6 @@
 import "./card-info.css";
-import { ApplicationSteps } from "../application-steps";
-import Subtitle from "../subtitle/subtitle";
+import { ApplicationSteps, Subtitle } from "../../components";
+
 
 type Props = {
   name: string | null;

@@ -30,3 +30,4 @@ export const listOfSteps = [
   "Link your @appliedtechnology.se email to your github account.",
   "Upload Salt ID Card as the proof of your academic status."
 ]
+

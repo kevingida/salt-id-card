@@ -1,4 +1,4 @@
-import { CtaButton, Logo} from "../../../components";
+import { CtaButton, Logo} from "../../components";
 import { SignOutButton } from "@clerk/clerk-react";
 import { useLocation } from "react-router-dom";
 import "./navbar.css";

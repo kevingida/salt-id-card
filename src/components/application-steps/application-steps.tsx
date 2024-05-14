@@ -1,4 +1,4 @@
-import Subtitle from "../subtitle/subtitle.tsx";
+import {Subtitle} from "../../components";
 import {listOfSteps} from "../../utils/utils.ts";
 
 export const ApplicationSteps = () => {

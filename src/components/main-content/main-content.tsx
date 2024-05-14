@@ -1,10 +1,10 @@
-import {SignedIn, useUser} from "@clerk/clerk-react";
-import {LoggedInRight, Navbar, Title, LoggedInLeft} from "../../components";
-import "./logged-in.css";
+import {useUser} from "@clerk/clerk-react";
+import {MainContentLeft, Title, MainContentRight, Navbar} from "../../components";
+import "./main-content.css";
 import {useEffect, useState} from "react";
 import {User} from "../../types.ts";
 
-export const LoggedIn = () => {
+export const MainContent = () => {
   const {user, isSignedIn} = useUser();
   const [userData, setUserData] = useState<User>();
   useEffect(() => {
@@ -18,16 +18,16 @@ export const LoggedIn = () => {
     }
   }, [isSignedIn]);
   return (
-    <SignedIn>
+    <>
       <Navbar/>
       {userData &&
           <section className="logged-in__section">
               <Title content="Your ID Card Snapshot"/>
               <div className="logged-in__wrapper">
-                  <LoggedInLeft name={userData.firstName}/>
-                  <LoggedInRight userData={userData}/>
+                  <MainContentLeft name={userData.firstName}/>
+                  <MainContentRight userData={userData}/>
               </div>
           </section>}
-    </SignedIn>
+    </>
   );
 };
