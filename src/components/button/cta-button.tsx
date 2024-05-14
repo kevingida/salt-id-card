@@ -5,7 +5,7 @@ type Props = {
   onClick?: ()=> void;
   children: React.ReactNode;
   variant: string,
-  disabled: boolean
+  disabled?: boolean
 };
 
 export const CtaButton = ({ onClick, children, variant, disabled}: Props) => {
