@@ -14,3 +14,8 @@
 .cta.primary{
     background-color: var(--coral);
 }
+
+.cta:disabled{
+    background-color: var(--light-gray);
+    cursor: no-drop;
+}

@@ -1,0 +1,10 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+.form-date__error{
+    color: var(--red);
+}

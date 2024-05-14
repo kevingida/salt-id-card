@@ -1,12 +1,14 @@
 import html2canvas from "html2canvas";
 import {User} from "../types.ts";
 import React from "react";
+import {dateRegex, listOfCourses, listOfLocations} from "../constants.ts";
 
 export const handlePrint = async (userData: User, printRef: React.RefObject<HTMLDivElement>) => {
   const element = printRef!.current;
   const canvas = await html2canvas(element!, {
     useCORS: true,
     scale: 4,
+    backgroundColor: "transparent"
   });
 
   const data = canvas.toDataURL("image/png");
@@ -24,10 +26,11 @@ export const handlePrint = async (userData: User, printRef: React.RefObject<HTML
   document.body.removeChild(link);
 };
 
-export const listOfSteps = [
-  "Select academic status \"Student\".",
-  "In the application section select \"Applied Technology - SALT\" as your school name.",
-  "Link your @appliedtechnology.se email to your github account.",
-  "Upload Salt ID Card as the proof of your academic status."
-]
 
+export const isDisabled = (date: string, name: string, location: string) => {
+  const dateValid = (dateRegex).test(date);
+  const nameValid = [...listOfCourses.filter(element => element.name === name)]
+  const locationValid = [...listOfLocations.filter(element => element.name === location)];
+  console.log(dateValid, nameValid, locationValid);
+  return !dateValid && nameValid.length === 0 && locationValid.length === 0
+}

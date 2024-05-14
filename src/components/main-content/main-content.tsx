@@ -22,7 +22,7 @@ export const MainContent = () => {
       <Navbar/>
       {userData &&
           <section className="logged-in__section">
-              <Title content="Your ID Card Snapshot"/>
+              <Title content="Your ID Card"/>
               <div className="logged-in__wrapper">
                   <MainContentLeft name={userData.firstName}/>
                   <MainContentRight userData={userData}/>
