@@ -7,11 +7,10 @@ type Props = {
   href?: string 
 };
 
-export const Tooltip = ({ children, content, disabled, href="#"}: Props) => {
+export const Tooltip = ({ children, content, disabled=true, href="#"}: Props) => {
   return (
     <>
       <a
-        className="clipboard-tooltip"
         data-tooltip-id={disabled ? "my-tooltip" : ""}
         data-tooltip-content={content}
         href={href}

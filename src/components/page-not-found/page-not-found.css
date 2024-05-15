@@ -14,7 +14,7 @@
   text-align: center;
 }
 
-.page-not-found__url {
+.page-not-found__url-container {
   margin-top: 15px;
   border-radius: 10px;
   padding: 5px 10px;
@@ -50,7 +50,8 @@
   background-color: var(--coral);
 }
 
-.clipboard-tooltip {
+.page-not-found__url-container a {
+  color: var(--light-gray);
   width: 30px;
   height: 30px;
 }

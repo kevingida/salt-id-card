@@ -53,17 +53,12 @@ export const PageNotFound = () => {
           Redirect
         </CtaButton>
         </Tooltip>
-      <span className="page-not-found__url">
+      <div className="page-not-found__url-container">
         {baseUrl + queryParams}
-        <a
-          className="clipboard-tooltip"
-          data-tooltip-id="my-tooltip"
-          data-tooltip-content="Copy to clipboard!"
-        >
+          <Tooltip content="Copy to clipboard!" >
           <ClipboardDocumentListIcon className="clipboard" onClick={copyLink} />
-        </a>
-
-      </span>
+          </Tooltip>
+      </div>
       <Toaster position="top-center" reverseOrder={false} />
     </div>
   );
