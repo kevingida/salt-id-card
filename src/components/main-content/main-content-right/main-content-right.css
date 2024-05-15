@@ -7,3 +7,7 @@
   gap: 40px;
   padding-top: 50px;
 }
+
+.clipboard-tooltip {
+  width: fit-content;
+}

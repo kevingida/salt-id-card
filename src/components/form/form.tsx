@@ -15,23 +15,9 @@ export const Form = ({ onChange }: Props) => {
 
   return (
     <form className="form">
-      <label htmlFor="date">Start date:</label>
-      <input
-        type="date"
-        name="date"
-        onChange={onChange}
-        onInput={(e: ChangeEvent<HTMLInputElement>) => handleDateChange(e)}
-      ></input>
-      {dateError && (
-        <span className="form-date__error">
-          Invalid date. Please verify that year is later than 2018
-        </span>
-      )}
       <label htmlFor="course">Course:</label>
-      <select name="course" onChange={onChange}>
-        <option defaultValue="" disabled={true} selected>
-          Select Course
-        </option>
+      <select name="course" onChange={onChange} defaultValue="">
+        <option value="">Select Course</option>
         {listOfCourses.map(({ id, name, value }) => (
           <option value={name} key={id}>
             {value}
@@ -46,6 +32,18 @@ export const Form = ({ onChange }: Props) => {
           </option>
         ))}
       </select>
+      <label htmlFor="date">Start date:</label>
+      <input
+        type="date"
+        name="date"
+        onChange={onChange}
+        onInput={(e: ChangeEvent<HTMLInputElement>) => handleDateChange(e)}
+      ></input>
+      {dateError && (
+        <span className="form-date__error">
+          Invalid date. Please verify that year is later than 2018
+        </span>
+      )}
     </form>
   );
 };
