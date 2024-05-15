@@ -7,15 +7,15 @@
 }
 
 .form-date__error {
-  color: var(--red);
+  color: var(--text-error);
 }
 
 .form input,
 .form select {
   border-radius: 10px;
   outline: none;
-  border: 1px solid var(--light-gray);
-  box-shadow: 2px 2px 5px var(--medium-gray);
+  border: 1px solid var(--border-primary);
+  box-shadow: 2px 2px 5px var(--border-secondary);
 }
 
 .form select {
@@ -31,5 +31,5 @@
   font-size: 16px;
   margin-top: 20px;
   padding-left: 5px;
-  color: var(--global-color-secondary);
+  color: var(--text-secondary);
 }

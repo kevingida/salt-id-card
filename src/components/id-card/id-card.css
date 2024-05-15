@@ -9,10 +9,10 @@
   gap: 10px;
 }
 .card-wrapper {
-  background-color: var(--white);
+  background-color: var(--background-secondary-light);
   width: 400px;
   height: 250px;
-  border: 2px solid var(--coral);
+  border: 2px solid var(--border-tertiery);
   border-radius: 10px;
   display: flex;
   flex-direction: column;

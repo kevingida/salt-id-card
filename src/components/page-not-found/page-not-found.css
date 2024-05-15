@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--light-gray);
+  background-color: var(--background-secondary-dark);
 }
 
 .page-not-found__url-container {
@@ -17,8 +17,8 @@
   align-items: center;
   justify-content: space-between;
   width: fit-content;
-  color: var(--light-gray);
-  background-color: var(--global-color-tertiery);
+  color: var(--text-tertiery-dark);
+  background-color: var(--background-tertiery);
 }
 
 .clipboard {
@@ -30,11 +30,11 @@
 }
 
 .clipboard:hover {
-  background-color: var(--coral);
+  background-color: var(--background-primary-dark);
 }
 
 .page-not-found__url-container a {
-  color: var(--light-gray);
+  color: var(--text-tertiery-dark);
   width: 30px;
   height: 30px;
 }

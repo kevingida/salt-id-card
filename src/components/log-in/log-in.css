@@ -1,7 +1,7 @@
 .logged-out-container {
   width: 60%;
   margin: 0 auto;
-  background-color: var(--white);
+  background-color: var(--background-secondary-light);
   display: flex;
   justify-content: center;
   align-items: flex-start;

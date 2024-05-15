@@ -1,7 +1,7 @@
 .main-content__section {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--background-secondary-light);
   justify-content: center;
   align-items: center;
   border-radius: 20px;
