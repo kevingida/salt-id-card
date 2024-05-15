@@ -25,6 +25,7 @@ export const PageNotFound = () => {
 
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const queryParams = `?date=${date}&name=${course}&location=${location}`;
+  const disabled = isDisabled(date, course, location);
 
   const copyLink = () => {
     navigator.clipboard
@@ -46,12 +47,12 @@ export const PageNotFound = () => {
       <Form onChange={inputForm} />
       <a
         href={queryParams}
-        data-tooltip-id="my-tooltip"
+        data-tooltip-id={disabled ? "my-tooltip" : ""}
         data-tooltip-content="Fill all fields!"
       >
         <CtaButton
           variant="primary"
-          disabled={isDisabled(date, course, location)}
+          disabled={disabled}
         >
           Redirect
         </CtaButton>
