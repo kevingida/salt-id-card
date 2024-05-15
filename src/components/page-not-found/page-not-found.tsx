@@ -1,10 +1,10 @@
 import "./page-not-found.css";
 import { ChangeEvent, useState } from "react";
-import { CtaButton, Form } from "../../components";
+import { CtaButton, Form, Tooltip } from "../../components";
 import { isDisabled } from "../../utils/utils";
 import toast, { Toaster } from "react-hot-toast";
 import { ClipboardDocumentListIcon } from "@heroicons/react/24/outline";
-import { Tooltip } from "react-tooltip";
+
 
 export const PageNotFound = () => {
   const [input, setInput] = useState({
@@ -45,18 +45,14 @@ export const PageNotFound = () => {
         </p>
       </div>
       <Form onChange={inputForm} />
-      <a
-        href={queryParams}
-        data-tooltip-id={disabled ? "my-tooltip" : ""}
-        data-tooltip-content="Fill all fields!"
-      >
+      <Tooltip content="Fill all fields!" disabled={disabled} href={queryParams}>
         <CtaButton
           variant="primary"
           disabled={disabled}
         >
           Redirect
         </CtaButton>
-      </a>
+        </Tooltip>
       <span className="page-not-found__url">
         {baseUrl + queryParams}
         <a
@@ -66,7 +62,7 @@ export const PageNotFound = () => {
         >
           <ClipboardDocumentListIcon className="clipboard" onClick={copyLink} />
         </a>
-        <Tooltip id="my-tooltip" />
+
       </span>
       <Toaster position="top-center" reverseOrder={false} />
     </div>

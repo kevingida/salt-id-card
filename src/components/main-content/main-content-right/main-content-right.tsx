@@ -1,9 +1,8 @@
-import { IdCard, CtaButton } from "../../../components";
+import { IdCard, CtaButton, Tooltip } from "../../../components";
 import { handlePrint, isDisabled } from "../../../utils/utils.ts";
 import { useEffect, useRef, useState } from "react";
 import "./main-content-right.css";
 import { useLocation } from "react-router-dom";
-import { Tooltip } from "react-tooltip";
 import { useUser } from "@clerk/clerk-react";
 import { User } from "../../../types.ts";
 
@@ -30,13 +29,9 @@ export const MainContentRight = () => {
 
   return (
     userData && (
-      <div className="id-card__wrapper">
+      <div className="main-content-right__wrapper">
         <IdCard userData={userData!} ref={printRef} />
-        <a
-          className="clipboard-tooltip"
-          data-tooltip-id={disabled ? "my-tooltip" : ""}
-          data-tooltip-content="Don't mess with the url!"
-        >
+        <Tooltip content="Don't mess with the url!" disabled={disabled}>
           <CtaButton
             onClick={() => handlePrint(userData!, printRef)}
             variant="info"
@@ -44,8 +39,7 @@ export const MainContentRight = () => {
           >
             Download my ID
           </CtaButton>
-        </a>
-        <Tooltip id="my-tooltip" />
+        </Tooltip>
       </div>
     )
   );

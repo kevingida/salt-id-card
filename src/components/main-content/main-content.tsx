@@ -1,4 +1,6 @@
-import {MainContentLeft, Title, MainContentRight, Navbar} from "../../components";
+import {Title, Navbar} from "../../components";
+import { MainContentLeft } from "./main-content-left";
+import { MainContentRight } from "./main-content-right";
 import "./main-content.css";
 
 export const MainContent = () => {

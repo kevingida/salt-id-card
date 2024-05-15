@@ -11,4 +11,4 @@ export * from "./log-in"
 export * from './subtitle'
 export * from './application-steps'
 export * from './form'
-
+export * from './tooltip'
