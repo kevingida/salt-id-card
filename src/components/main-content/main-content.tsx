@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {User} from "../../types.ts";
 
 export const MainContent = () => {
-  const {user, isSignedIn} = useUser();
+  const {user} = useUser();
   const [userData, setUserData] = useState<User>();
   useEffect(() => {
     if (user) {
@@ -16,14 +16,14 @@ export const MainContent = () => {
         image: user.externalAccounts[0].imageUrl,
       });
     }
-  }, [isSignedIn]);
+  }, []);
   return (
     <>
       <Navbar/>
       {userData &&
-          <section className="logged-in__section">
+          <section className="main-content__section">
               <Title content="Your ID Card"/>
-              <div className="logged-in__wrapper">
+              <div className="main-content__wrapper">
                   <MainContentLeft name={userData.firstName}/>
                   <MainContentRight userData={userData}/>
               </div>

@@ -18,7 +18,7 @@ function App() {
     } else if (isDisabled(date!, course!, location!)) {
       setMissingParams(true);
     }
-  }, []);
+  }, [course, date, location]);
 
   return missingParams ? (
     <PageNotFound />
