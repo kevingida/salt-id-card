@@ -1,10 +1,7 @@
 import {CardInfo} from "../../card-info";
 
-type Props={
-  name: string | null
-}
-export const MainContentLeft = ({name}: Props) => {
+export const MainContentLeft = () => {
   return (
-    <CardInfo name={name} />
+    <CardInfo  />
   );
 };

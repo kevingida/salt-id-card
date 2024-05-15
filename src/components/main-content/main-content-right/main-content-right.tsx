@@ -1,39 +1,52 @@
 import { IdCard, CtaButton } from "../../../components";
 import { handlePrint, isDisabled } from "../../../utils/utils.ts";
-import { useRef } from "react";
-import { User } from "../../../types.ts";
+import { useEffect, useRef, useState } from "react";
 import "./main-content-right.css";
 import { useLocation } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
+import { useUser } from "@clerk/clerk-react";
+import { User } from "../../../types.ts";
 
-type Props = {
-  userData: User;
-};
-
-export const MainContentRight = ({ userData }: Props) => {
+export const MainContentRight = () => {
   const printRef = useRef<HTMLDivElement>(null);
   const date = new URLSearchParams(useLocation().search).get("date");
   const name = new URLSearchParams(useLocation().search).get("name");
   const location = new URLSearchParams(useLocation().search).get("location");
-  const isDisable = isDisabled(date!, name!, location!);
+  const disabled = isDisabled(date!, name!, location!);
+
+  const { user } = useUser();
+  const [userData, setUserData] = useState<User>();
+
+  useEffect(() => {
+    if (user) {
+      setUserData({
+        email: user.primaryEmailAddress?.emailAddress,
+        firstName: user.firstName,
+        fullName: user.fullName,
+        image: user.externalAccounts[0].imageUrl,
+      });
+    }
+  }, [user]);
 
   return (
-    <div className="id-card__wrapper">
-      <IdCard userData={userData} ref={printRef} />
-      <a
-        className="clipboard-tooltip"
-        data-tooltip-id={isDisable ? "my-tooltip" : ""}
-        data-tooltip-content="Don't mess with the url!"
-      >
-        <CtaButton
-          onClick={() => handlePrint(userData, printRef)}
-          variant="info"
-          disabled={isDisable}
+    userData && (
+      <div className="id-card__wrapper">
+        <IdCard userData={userData!} ref={printRef} />
+        <a
+          className="clipboard-tooltip"
+          data-tooltip-id={disabled ? "my-tooltip" : ""}
+          data-tooltip-content="Don't mess with the url!"
         >
-          Download my ID
-        </CtaButton>
-      </a>
-      <Tooltip id="my-tooltip" />
-    </div>
+          <CtaButton
+            onClick={() => handlePrint(userData!, printRef)}
+            variant="info"
+            disabled={disabled}
+          >
+            Download my ID
+          </CtaButton>
+        </a>
+        <Tooltip id="my-tooltip" />
+      </div>
+    )
   );
 };
