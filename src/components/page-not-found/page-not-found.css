@@ -8,12 +8,6 @@
   background-color: var(--light-gray);
 }
 
-.page-not-found {
-  color: var(--dark-gray);
-  font-size: 25px;
-  text-align: center;
-}
-
 .page-not-found__url-container {
   margin-top: 15px;
   border-radius: 10px;
@@ -25,17 +19,6 @@
   width: fit-content;
   color: var(--light-gray);
   background-color: var(--global-color-tertiery);
-}
-
-.page-not-found__title {
-  font-size: 90px;
-  color: var(--global-color-secondary);
-  line-height: 0.8;
-}
-
-.page-not-found__subtitle {
-  font-size: 50px;
-  color: var(--global-color-secondary);
 }
 
 .clipboard {
