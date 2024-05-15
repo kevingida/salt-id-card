@@ -4,17 +4,17 @@ type Props = {
   children: React.ReactNode;
   content: string;
   disabled?: boolean;
-  href?: string
+  href?: string 
 };
 
-export const Tooltip = ({ children, content, disabled, href}: Props) => {
+export const Tooltip = ({ children, content, disabled, href="#"}: Props) => {
   return (
     <>
       <a
         className="clipboard-tooltip"
         data-tooltip-id={disabled ? "my-tooltip" : ""}
         data-tooltip-content={content}
-        href={href ? href : "#"}
+        href={href}
       >
         {children}
       </a>
