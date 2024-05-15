@@ -37,9 +37,10 @@ export const PageNotFound = () => {
     <div className="page-not-found__container">
       <div className="page-not-found">
         <h1 className="page-not-found__title">404</h1>
+        <h2 className="page-not-found__subtitle">Page Not Found</h2>
+
         <p>
-          Page not found. Please check the url or generate one with the form
-          below and try again.
+          Please check the url or generate one with the form below and try again
         </p>
       </div>
       <Form onChange={inputForm} />
